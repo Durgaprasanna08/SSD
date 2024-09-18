@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Steel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+section {
+    height: max-content;
+    width:100%;
+    display:grid;
+    place-items:center;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+  
+
+}
+.column{
+    max-width: 1500px;
+  
+    padding:30px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.card{
+    width:25rem;
+    min-height: 250px;
+    padding:2em 1.5em;
+    background: linear-gradient(white 50%,#FDC039 50%);
+    background-size: 100% 200%;
+    background-position: 0 2.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.12);
+    cursor:pointer;
+    transition:0.5s;
+    margin-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+}
+h3{
+    font-size: 20px;
+    font-weight:600;
+    color:#FDC039;
+    margin: lem 0;
+}
+p{
+    color:#000000;
+    font-size: 15px;
+    line-height:1.6;
+    letter-spacing:0.03em;
+
+}
+.icon-wrapper{
+    background-color: #FDC039;
+    position:relative;
+    margin:auto;
+    font-size:30px;
+    height:2.5em;
+    width:2.5em;
+    color:#000000;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+}
+.card:hover{
+    background-position: 0 100%;
+}
+.card:hover .icon-wrapper{
+    background-color: white;
+    color:#FDC039;
+}
+.card:hover h3{
+    color:#000000;
+}
+.card:hover p{
+    color:#000000;
+}
+
+@media (max-width: 768px){
+    .card{
+        width: 20rem;
+    }
+}
+    </style>
+    </head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="nav-logo.png" alt="">
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">☰</label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" >About Us</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-header"  style="    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://www.ny-engineers.com/hubfs/Us%20construction%20%281%29.jpg); background-size: cover;">
+            <h1 style="color: white;">About Us</h1>
+        </div>
+
+        <section>
+           
+            <div class="column">
+                        <div href="" class="card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-hotel"></i>
+                            </div>
+                            <h3>Structural Steel Detailing</h3>
+                            <p>
+                                Squad Steel DetailingDetailing is committed to provide precisely detailed Commercial, 
+                                Industrial and residential steel structures. Structural detailing is a critical process
+                                of structural engineering and demands 100% accuracy. Our structural team holds tremendous skills 
+                                to produce quality drawings .WE utilizes Design Data’s SDS/2 technology to help produce high quality shop drawings 
+                                and erection plans, in addition to the field bolt list, shop bolt lists and material lists on schedule.
+                            </p>
+                        </div>
+                        <div href="" class="card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-lines-leaning"></i>
+                            </div>
+                            <h3>Miscellaneous Steel Detailing</h3>
+                            <p>
+                                With the use of SDS/2 software technology and AutoDesk Inventor, 
+                                to guide us in producing a wide range in scope of miscellaneous detailed drawings.
+                                We have our dedicate Miscellaneous team specialized in detailing complex Stairs, 
+                                Ladders, Gates and Rails with 100% accuracy.
+                            </p>
+                        </div>
+                        <div href="" class="card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-cubes "></i>
+                            </div>
+                            <h3>Connection Design Squad Steel Detailing</h3>
+                            <p>
+                            As a leading structural steel detailing company we offer best quality structural steel
+                            connection design services to steel fabricators. To maintain an adherence to international standards 
+                            in engineering we are associated with Structural engineers around USA and Canada.
+                            In nut shell, we can provide connection designs and PE Stamping around all states of USA. 
+                            </p>
+                        </div>
+                        
+                        <div href="" class="card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <h3>Reports</h3>
+                            <p>
+                                 Squad Steel Detailing offers a wide range of reports from standard to custom designed.
+                                 We cover from ABM’s to BOM’s as well as Field Bolt Lists, Shop Bolt Lists, 
+                                 Material Summary Reports, Finish, Galvanizing, Plate Reports, Sequence Reports, 
+                                 Connection Design and various files such as Kiss files, CNC files, EJE files and DXF files to our customers.
+                            </p>
+                        </div>
+                        <div href="" class="card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <h3>Estimate</h3>
+                            <p>
+                                We at Squad Steel Detailing have dedicated estimation team to estimate detailing time and cost depending upon the size and complexity of the project.
+                                We always try to give the most competitive price and schedule to help our clients to win the projects.
+                            </p>
+                        </div>
+                        <!-- <div href="" class="card"></div>
+                            <div class="icon-wrapper">
+                            <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <h3>Estimate</h3>
+                            <p>
+                                We at Squad Steel Detailing have dedicated estimation team to estimate detailing time and cost depending upon the size and complexity of the project.
+                                We always try to give the most competitive price and schedule to help our clients to win the projects.
+                            </p>
+                        </a> -->
+                        
+            </div>
+          </section>
+
+        </main>
+
+    <footer>
+        <div class="container-footer">
+            <div class="footer-column">
+                <div class="logo-footer">
+                    <img src="nav-logo.png" alt="Squad steel detailing"  >
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 style="color: black;">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+            </div>
+            <div class="footer-column">
+                <h3 style="color: black;">Services</h3>
+                <ul>
+                    <li><a href="#">Structural Steel Detailing</a></li>
+                    <li><a href="#">Miscellaneous Steel Detailing</a></li>
+                    <li><a href="#">Connection Design Squad Steel Detailing</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Estimate</a></li>
+                </ul>
+                
+            </div>
+            <div class="footer-column">
+                <h3 style="color: black;">Get in touch</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook fa-xl" style="color: black;"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter fa-xl"style="color: black;"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin fa-xl"style="color: black;"></i></a>
+                </div>
+                <div  style="display: flex;flex-direction: column;"></div>
+                    <p>401, Garg Enclave,  Telecom Nagar,  Gachibowli
+                    500032.</p>
+                    <p>Leo@squadsteeldetailing.com</p>
+                    <p>+91 83410 91462</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            ©2022 Glossy, All right reserved.
+        </div>
+    </footer>
+    <script src="wow.js"></script>
+</body>
+</html>

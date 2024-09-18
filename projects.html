@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Steel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+         
+    </style>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="nav-logo.png" alt="">
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">☰</label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" >About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-header"  style="    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://www.ny-engineers.com/hubfs/Us%20construction%20%281%29.jpg); background-size: cover;">
+            <h1 style="color: white;">Projects</h1>
+        </div>
+
+
+        <div class="total">
+            <div class="works">
+                <h1><span>Our Works</span></h1>
+                <div class="filter-buttons">
+                    <button onclick="filterProjects('all')">All</button>
+                    <button onclick="filterProjects('commercial')">Commercial</button>
+                    <button onclick="filterProjects('industrial')">Industrial</button>
+                </div>
+                
+                <div id="projectGrid" class="project-grid"></div>
+                <button id="loadMore" onclick="loadMoreProjects()">Load More Projects</button>
+                
+            </div>
+        </div>
+    
+        <script>
+            const projects = [
+    {
+        id: 1,
+        category: 'industrial',
+        title: 'Industrial Warehouse,Houston, Texas, USA',
+        thumbnail: 'images/warehouse.png',
+        description: `
+            <p>This industrial warehouse project in Houston, Texas, was designed to accommodate large-scale storage and distribution operations. The warehouse structure is a single-story building featuring a wide-span roof supported by steel beams and columns. The design includes loading docks, mezzanine floors for office spaces, and provisions for heavy equipment and material handling systems.</p>
+            <p>The structural detailing involved complex truss systems to provide the necessary strength and stability for the roof, which spans significant distances without interior columns to maximize usable space. The warehouse also includes a fire-rated compartmentation system, requiring precise detailing for fire-resistance-rated walls and ceilings, following strict safety regulations.</p>
+            <p><strong>steelUsed:</strong>500 tons of high-strength steel<p>
+            <p><strong>hoursWorked</strong> 2,000 hours<p>
+            <p><strong>detailersInvolved:</strong>10 detailers<p>
+            <p><strong>standardsAndCodes:</strong>AISC, IBC, OSHA<p>
+        `,
+      
+    },
+    {
+        id: 2,
+        category: 'commercial',
+        title: 'High-Rise Commercial Building - Chicago, IL',
+        thumbnail: 'images/highraise.png',
+        description: `
+            <p>This project involved detailing the structural steel framework for a 15-story,300,000 sq ft  commercial building in Chicago.<br>The detailing work focused on the core structure, including beams, columns, and floor decking systems. The complexity of the project</p>
+            <p>required precise coordination with the design team to ensure accuracy in the steel connections and adherence to local building codes.</p>
+            <p><strong>steelUsed:</strong> A992 Grade 50<p>
+            <p><strong>hoursWorked</strong> 450 hours<p>
+            <p><strong>detailersInvolved:</strong>8 detailers<p>
+            `
+    },
+    {
+        id: 3,
+        category: 'commercial',
+        title: 'External Staircase Structure',
+        thumbnail: 'images/staircase.png',
+        description: `
+            <p>This project involved the design and detailing of an external staircase for a commercial building in Chicago, Illinois. The staircase provides emergency egress for the building occupants and doubles as an architectural feature. Its exposed steel structure needed to be both functional and aesthetically pleasing.</p>
+            <p>The design features a zigzag configuration, with the stairs enclosed by steel railings and grating. The staircase was engineered to handle heavy foot traffic and was designed to integrate seamlessly with the building's exterior while also meeting stringent safety and fire codes. The structure was hot-dip galvanized to protect against corrosion, given Chicago's varied and sometimes harsh climate conditions.</p>
+             <p><strong>steelUsed:</strong> 150 tons of galvanized steel<p>
+            <p><strong>hoursWorked</strong> 800 hours<p>
+            <p><strong>detailersInvolved:</strong>9 detailers<p>
+            <p><strong>standardsAndCodes:</strong>AISC, ADA, NFPA, ASTM A123/A123M<p>
+        `
+    },
+    {
+        id: 4,
+        category: 'industrial',
+        title: 'Industrial Complex - Houston, TX',
+        thumbnail: 'images/industrial-complex.png',
+        description: `
+            <p>This large-scale industrial complex in Houston(500,000 sq ft) involved the detailing of steel structures for multiple facilities,including storage units, processing plants, and support buildings. The project required extensive coordination with various trades toensure that the steel detailing met the stringent specifications for industrial use, including load-bearing requirements and resistance to environmental factors.</p>
+            <p><strong>steelUsed:</strong>A36<p>
+            <p><strong>hoursWorked</strong> 620 hours<p>
+            <p><strong>detailersInvolved:</strong>10 detailers<p>
+        `
+    },
+    {
+        id: 5,
+        category: 'commercial',
+        title: 'Sports Arena - Los Angeles, CA',
+        thumbnail: 'images/sports-arena.png',
+        description: `
+            <p>The sports arena project(250,000 sq ft ) in Los Angeles required the detailing of a wide-span roof structure, spectator stands, and supporting facilities. The design was complex, involving intricate steel trusses and connections to support large crowds and events.</p>
+            <p>The detailing work focused on optimizing the structural integrity while allowing for aesthetic and functional design elements.</p>
+            <p><strong>steelUsed:</strong>A572 Grade 50<p>
+            <p><strong>hoursWorked</strong> 510 hours<p>
+            <p><strong>detailersInvolved:</strong>10 detailers<p>
+        `
+    },
+    {
+        id: 6,
+        category: 'industrial',
+        title: 'Louisiana Office Complex, Baton Rouge, Louisiana',
+        thumbnail: 'images/office-complex.png',
+        description: `
+            <p>This office complex was detailed following AISC standards to ensure the highest quality in structural integrity and safety. The project involved the collaboration of a team of 6 detailers who meticulously worked for a total of 1,200 hours. Each beam, column, and connection was modeled and checked using advanced BIM software, ensuring precise alignment and fit during fabrication and erection.The project spanned three months and included complex connections that required innovative detailing solutions.</p>
+            
+        `
+      
+    },
+    {
+        id: 7,
+        category: 'industrial',
+        title: 'Terminal 3 Expansion ,Atlanta, Georgia',
+        thumbnail: 'images/terminal3.png',
+        description: `
+            <p>The expansion of Terminal 3 at Hartsfield-Jackson Atlanta International Airport was a high-stakes project requiring exacting standards and precision. Using AISC standards, our team of 8 detailers invested over 2,000 hours in modeling, checking, and coordinating with fabricators and constructors. This project featured large-span trusses and a complex roof structure, which were detailed to accommodate various loads and service requirements. The use of BIM technology facilitated clash detection and seamless coordination with other trades.</p>
+            
+        `
+    },
+    {
+        id: 8,
+        category: 'industrial',
+        title: 'Camp Auditorium ,Houston, Texas',
+        thumbnail: 'images/campauditorium.png',
+        description: `
+            <p>This multi-use auditorium was detailed with attention to both structural performance and aesthetic requirements. Adhering to AISC standards, our team of 5 detailers dedicated 1,000 hours to this project. The structure includes intricate roof framing and support systems to accommodate the auditorium's large, open spaces. Special detailing was done for acoustical considerations and to support large, suspended components within the space. BIM integration allowed for real-time adjustments and ensured all elements fit perfectly during assembly</p>
+            
+        `
+    }
+];
+let visibleProjects = 2; // Number of initially visible projects
+let currentFilter = 'all'; // To filter projects by category
+
+function renderProjects() {
+    const projectGrid = document.getElementById('projectGrid');
+    projectGrid.innerHTML = '';
+
+    const filteredProjects = currentFilter === 'all' 
+        ? projects 
+        : projects.filter(project => project.category === currentFilter);
+
+    filteredProjects.slice(0, visibleProjects).forEach(project => {
+        const projectItem = document.createElement('div');
+        projectItem.className = 'project-item';
+        projectItem.innerHTML = `
+            <img src="${project.thumbnail}" alt="${project.title}">
+            <h2>${project.title}</h2>
+            ${project.description}
+            
+        `;
+        projectGrid.appendChild(projectItem);
+    });
+
+    document.getElementById('loadMore').style.display = 
+        visibleProjects < filteredProjects.length ? 'inline-block' : 'none';
+}
+
+function filterProjects(category) {
+    currentFilter = category;
+    visibleProjects = 2; // Reset visible projects when filter changes
+    renderProjects();
+
+    // Update button styles to highlight the active category
+    document.querySelectorAll('.filter-buttons button').forEach(button => {
+        button.classList.remove('active');
+    });
+    document.querySelector(`[onclick="filterProjects('${category}')"]`).classList.add('active');
+}
+
+function loadMoreProjects() {
+    visibleProjects += 2; // Load more projects by 2 each time
+    renderProjects();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderProjects();
+});
+
+        </script>   
+
+        </main>
+
+        <footer>
+            <div class="container-footer">
+                <div class="footer-column">
+                    <div class="logo-footer">
+                        <img src="nav-logo.png" alt="Squad steel detailing"  >
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: black;">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: black;">Services</h3>
+                    <ul>
+                        <li><a href="#">Structural Steel Detailing</a></li>
+                        <li><a href="#">Miscellaneous Steel Detailing</a></li>
+                        <li><a href="#">Connection Design Squad Steel Detailing</a></li>
+                        <li><a href="#">Reports</a></li>
+                        <li><a href="#">Estimate</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: black;">Get in touch</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook fa-xl" style="color: black;"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter fa-xl"style="color: black;"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin fa-xl"style="color: black;"></i></a>
+                    </div>
+                    <div  style="display: flex;flex-direction: column;"></div>
+                        <p>401, Garg Enclave,  Telecom Nagar,  Gachibowli
+                        500032.</p>
+                        <p>Leo@squadsteeldetailing.com</p>
+                        <p>+91 83410 91462</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="footer-bottom">
+                ©2022 Glossy, All right reserved.
+            </div>
+        </footer>
+</body>
+</html>
